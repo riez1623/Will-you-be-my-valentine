@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you be my valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: red;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #yes {
+            background-color: #ff4d4d;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+        #no {
+            background-color: #333;
+            color: white;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you be my valentine?🥰</h1>
+    <div class="buttons">
+        <button id="yes" onclick="yesClicked()">Yes</button>
+        <button id="no" onclick="noClicked()">No</button>
+    </div>
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
+        </div>
+    <script>
+        let yesButton = document.getElementById("yes");
+        let noButton = document.getElementById("no");
+        let yesSize = 1.5; // Initial font size
+        let noTexts = [
+            "Pleaaaseee 🥺", "Are you sure? 😢", "Think Again! 😭", 
+            "You're breaking my heart 💔","Last chance", "DONT DO THIS🙏", "PLEASEEEE 😭💖", 
+            "Fine you win😔", "Wait, no you dont😢", "JUST SAY YES 😡", 
+            "Okay this is getting ridiculous", "WHY ARE YOU LIKE THIS 😭", 
+            "There is no escape 😈", "Just click Yes already!!! 😠"
+        ];
+        let noIndex = 0;
+
+        function noClicked() {
+            yesSize += 4; // Make Yes grow faster
+            yesButton.style.fontSize = yesSize + "em";
+
+            if (noIndex < noTexts.length) {
+                noButton.textContent = noTexts[noIndex]; 
+                noIndex++;
+            }
+
+            if (yesSize >= 90) { 
+                yesButton.style.position = "fixed";
+                yesButton.style.top = "0";
+                yesButton.style.left = "0";
+                yesButton.style.width = "90vw";
+                yesButton.style.height = "90vh";
+                yesButton.style.fontSize = "5em";
+                yesButton.textContent = "YOU HAVE NO CHOICE 😈";
+            }
+        }
+
+        function yesClicked() {
+            alert("thank u🥰");
+        }
+    </script>
+
+</body>
+</html>
