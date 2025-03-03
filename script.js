@@ -54,7 +54,7 @@
 })();
 */
 const messages = [
-    "Are you sure?",
+    "Are you sure??",
     "Really sure??",
     "Are you positive?",
     "Pookie please...",
